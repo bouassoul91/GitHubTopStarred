@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-		//loading JSON file as well as initializing views and components  .
+	//loading JSON file as well as initializing views and components  .
         initViews();
 
-		//On refresh load the JSON file again.
+	//On refresh load the JSON file again.
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
         swipeContainer.setColorSchemeResources(android.R.color.holo_orange_dark);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.smoothScrollToPosition(0);
 		
-		//load and show items.
+	//load and show items.
         loadJSON();
     }
 
@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
         Disconnected = (TextView) findViewById(R.id.disconnected);
         try{
             //Get the date
-			Calendar cal = Calendar.getInstance();
-			cal.add(Calendar.DAY_OF_YEAR, -30);
-			String startDate = cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DATE);
+	    Calendar cal = Calendar.getInstance();
+	    cal.add(Calendar.DAY_OF_YEAR, -30);
+	    String startDate = cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DATE);
             
             String URL = "/search/repositories?q=created%3A>="+ startDate +"&sort=stars&order=desc";
 			
